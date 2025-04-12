@@ -48,7 +48,7 @@ function Navbar() {
         top: 0,
         left: 0,
         width: "100%",
-        padding: "15px 20px",
+        padding: "25px 20px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -98,7 +98,7 @@ function Navbar() {
             flexDirection: "column",
             gap: "5px",
             zIndex: 1100,
-            padding: "8px",
+            padding: "10px",
           }}
         >
           <span style={{
