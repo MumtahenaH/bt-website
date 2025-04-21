@@ -53,7 +53,7 @@ function Navbar() {
         justifyContent: "center",
         alignItems: "center",
         zIndex: 1000,
-        background: scrolled ? "rgba(127, 127, 127, 0.25)" : "rgba(0, 0, 0, 0)",
+        background: scrolled ? "rgba(24, 21, 21, 0.25)" : "rgba(0, 0, 0, 0)",
         backdropFilter: scrolled ? "blur(10px)" : "none",
         transition: "all 0.3s ease-in-out",
       }}

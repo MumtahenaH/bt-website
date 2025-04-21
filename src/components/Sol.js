@@ -32,7 +32,8 @@ function Sol() {
                     </div>
 
                     <button style={styles.button}>
-                        Learn More <span style={{ fontSize: "16px" }}>→</span>
+                    <a href="/services">  Learn More <span style={{ fontSize: "16px" }}>→</span></a>
+                      
                     </button>
                 </div>
 

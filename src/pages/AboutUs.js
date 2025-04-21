@@ -5,7 +5,7 @@ function AboutUs() {
             <div
                 style={{
                     position: "relative",
-                    minHeight: "80vh",
+                    minHeight: "50vh",
                     backgroundImage: "url('/assets/aboutus.svg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",

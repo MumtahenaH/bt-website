@@ -185,27 +185,29 @@ function ContactUs() {
         </div>
 
         {/* Contact Form */}
-        <div className="mt-20 max-w-3xl mx-auto">
+        <div className="mt-20 max-w-xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-light font-['Space_Grotesk'] text-black text-center mb-8">
             Send Us a Message
           </h2>
           <form onSubmit={handleSubmit} className="mt-8 bg-gray-100 p-6 rounded-lg shadow-md w-full">
-            <div className="mb-4">
-              <label className="block text-gray-500 text-sm mb-2">Name</label>
+            <div className="mb-7">
+             
               <input
                 type="text"
                 name="name"
+                placeholder='Name'
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-gray-200 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-500 text-sm mb-2">Email</label>
+            <div className="mb-7">
+              <label className="block text-gray-500 text-sm mb-2"></label>
               <input
                 type="email"
                 name="email"
+                placeholder='Email'
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-gray-200 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -213,9 +215,10 @@ function ContactUs() {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-500 text-sm mb-2">Message</label>
+             
               <textarea
                 name="message"
+                placeholder='Message'
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"

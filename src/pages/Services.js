@@ -18,7 +18,7 @@ function Services() {
       {/* Hero Section */}
       <div
         style={{
-          minHeight: isMobile ? "60vh" : "80vh",
+          minHeight: isMobile ? "60vh" : "50vh",
           backgroundImage: "url('/assets/elements.svg')",
           backgroundSize: "cover",
           backgroundPosition: "center",

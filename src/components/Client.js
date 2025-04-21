@@ -39,8 +39,8 @@ function Client() {
                             e.currentTarget.style.transform = "scale(1.05)";
                             e.currentTarget.style.boxShadow = "0px 8px 12px rgba(0, 0, 0, 0.2)";
                         }}
-                    >
-                        Learn More <span style={{ fontSize: "16px", transition: "transform 0.3s ease-in-out" }}>→</span>
+                    > <a href="/clients">
+                        Learn More <span style={{ fontSize: "16px", transition: "transform 0.3s ease-in-out" }}>→</span> </a>
                     </button>
                 </div>
 
