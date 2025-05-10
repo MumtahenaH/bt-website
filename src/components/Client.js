@@ -72,7 +72,7 @@ function Client() {
     };
 
     return (
-        <div style={{ backgroundColor: "#fff", minHeight: "100vh", width: "100%" }}>
+        <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh", width: "100%" }}>
             <ServicesSection />
         </div>
     );
@@ -88,7 +88,7 @@ const styles = {
         alignItems: "center",
         justifyContent: "space-between",
         gap: "50px",
-        background: "#fff"
+        background: "#f5f5f5"
     },
     imageContainer: { flex: 1 },
     image: {

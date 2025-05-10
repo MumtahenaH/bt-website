@@ -49,8 +49,8 @@ function About() {
       <section
         id="about"
         style={{
-          minHeight: "100vh",
-          backgroundImage: "url('/assets/about.svg')",
+          minHeight: "103vh",
+          backgroundImage: "url('/assets/ChatGPT Image May 9, 2025, 09_04_56 AM.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",
@@ -66,7 +66,7 @@ function About() {
           style={{
             fontSize: "3rem",
             fontFamily: "'Space Grotesk', sans-serif",
-            color: "white",
+            color: "#931f1d",
             marginBottom: "20px",
             padding: "70px",
             opacity: 0,

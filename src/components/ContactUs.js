@@ -1,142 +1,185 @@
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { useState } from "react";
 
 function ContactUs() {
     const [formData, setFormData] = useState({
         name: "",
+        company: "",
+        phone: "",
         email: "",
         message: "",
+        services: [],
     });
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleCheckboxChange = (e) => {
+        const { value, checked } = e.target;
+        setFormData((prev) => {
+            const services = checked
+                ? [...prev.services, value]
+                : prev.services.filter((s) => s !== value);
+            return { ...prev, services };
+        });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form Submitted:", formData);
-        // Handle form submission (send data to backend or email)
+    };
+
+    const styles = {
+        container: {
+            display: "flex",
+            flexDirection: { base: "column", md: "row" },
+            minHeight: "100vh",
+            backgroundColor: "#f9f2ee",
+            fontFamily: "Space Grotesk, sans-serif",
+            padding: { base: "2rem 1rem", md: "10rem" },
+            justifyContent: "center",
+            alignItems: "center",
+            border: "6px solid #931f1d",
+            gap: { base: "3rem", md: "5rem" },
+        },
+        imageContainer: {
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+        },
+        image: {
+            width: { base: "100%", md: "70%" },
+            height: "auto",
+            maxWidth: "500px",
+        },
+        textContent: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            width: "100%",
+            maxWidth: "700px",
+            padding: { base: "0 1rem", md: "0" },
+        },
+        heading: {
+            fontSize: { base: "1.5rem", md: "2rem" },
+            color: "#1d1d1f",
+            marginBottom: "1rem",
+            marginTop: { base: "2rem", md: "5rem" },
+        },
+        emailLink: {
+            color: "#931f1d",
+            textDecoration: "underline",
+        },
+        form: {
+            width: "100%",
+            backgroundColor: "#f9f2ee",
+            borderRadius: "8px",
+            padding: { base: "1rem", md: "2rem" },
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            minWidth: { base: "auto", md: "500px" },
+            maxWidth: "600px",
+        },
+        input: {
+            padding: { base: "0.6rem", md: "0.8rem" },
+            caretColor: "black",
+            fontSize: { base: "1rem", md: "1.5rem" },
+            backgroundColor: "#f9f2ee",
+            textAlign: "center",
+            outline: "none",
+            border: "none",
+            cursor: "text",
+            color: "#000",
+        },
+        textarea: {
+            padding: "0.5rem",
+            fontSize: { base: "1rem", md: "1.5rem" },
+            backgroundColor: "#f9f2ee",
+            textAlign: "center",
+            outline: "none",
+            border: "none",
+            cursor: "text",
+            resize: "none",
+            caretColor: "black",
+            color: "#000",
+            minHeight: "120px",
+        },
+        button: {
+            padding: { base: "0.8rem", md: "1rem" },
+            cursor: "pointer",
+            marginTop: "1rem",
+            textAlign: "center",
+            fontSize: { base: "0.9rem", md: "1rem" },
+        },
     };
 
     return (
-        <div>
-            <section id="contact" style={{
-                minHeight: "100vh",
-                backgroundImage: "url('/assets/footer.svg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-                padding: "2rem 0",
-            }}>
-                <div className="text-white w-full max-w-6xl mx-auto px-4">
-                    {/* Centered Contact Form */}
-                    <div className="flex justify-center">
-                        <div className="w-full max-w-md">
-                            <h2 className="text-3xl font-light mb-8">
-                                Ready to <span className="font-bold">revolutionise</span> your business needs <span className="font-bold">with our unrivalled expertise?</span>
-                            </h2>
-                            
-                            <form onSubmit={handleSubmit} className="bg-gray-800 p-6 rounded-lg shadow-md mt-5">
-                                <div className="mb-4 mt-5">
-                                   
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        required
-                                    />
-                                </div>
-                                <div className="mb-4 mt-5">
-                                    
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        required
-                                    />
-                                </div>
-                                <div className="mb-4 mt-5">
-                                  
-                                    <textarea
-                                        name="message"
-                                        placeholder="Message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        rows="4"
-                                        className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        required
-                                    ></textarea>
-                                </div>
-                                
-                                <button 
-                                    type="submit" 
-                                    className="mt-10 bg-gradient-to-r from-teal-400 to-blue-500 text-black px-6 py-3 rounded-full font-semibold hover:from-teal-500 hover:to-blue-600 transition-all duration-300 w-full"
-                                >
-                                    Send Message
-                                </button>
-                                <div className="mt-5">
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    {/* Contact Information Below Form */}
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {/* Address */}
-                        <div className="text-center">
-                            <h4 className="text-gray-400 uppercase text-sm font-semibold mb-4">ADDRESS</h4>
-                            <p className="text-gray-300">
-                                7/3 (Ground Floor), <br/>
-                                Block – C, Lalmatia,<br/>
-                                Dhaka-1207, Bangladesh
-                            </p>
-                        </div>
-
-                        {/* Social Media */}
-                        <div className="text-center">
-                            <h4 className="text-gray-400 uppercase text-sm font-semibold mb-4">SOCIAL MEDIA</h4>
-                            <div className="flex justify-center gap-6">
-                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-500 transition-colors">
-                                    <FaFacebookF className="text-xl" />
-                                </a>
-                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-500 transition-colors">
-                                    <FaLinkedinIn className="text-xl" />
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Phone */}
-                        <div className="text-center">
-                            <h4 className="text-gray-400 uppercase text-sm font-semibold mb-4">PHONE</h4>
-                            <p className="text-gray-300">+44 020 3319 3701</p>
-                        </div>
-
-                        {/* Email */}
-                        <div className="text-center">
-                            <h4 className="text-gray-400 uppercase text-sm font-semibold mb-4">EMAIL</h4>
-                            <p className="text-gray-300">info@info.com</p>
-                        </div>
-                    </div>
-
-                    {/* Footer Copyright */}
-                    <div className="border-t border-gray-700 mt-12 pt-6 text-gray-400 text-sm">
-                        <p className="mb-2">Business Technologies, Limited registered in Bangladesh</p>
-                        <p>Copyright © Business Technologies All Rights Reserved</p>
-                    </div>
+        <div style={styles.container}>
+            {/* Left Side Text */}
+            <div style={styles.textContent}>
+                <div style={styles.imageContainer}>
+                    <img
+                        src="/assets/contactus.png"
+                        alt="Contact Us"
+                        style={styles.image}
+                    />
                 </div>
-            </section>
+
+                <h1 style={styles.heading}>Reach out to us</h1>
+                <p style={{ fontSize: "1rem", color: "#333" }}>
+                    Get a <a href="mailto:start@lliosocial.com" style={styles.emailLink}>email@email.com</a>
+                </p>
+            </div>
+
+            {/* Contact Form */}
+            <form onSubmit={handleSubmit} style={styles.form}>
+                {[
+                    { name: "name", label: "Name", type: "text" },
+                    { name: "company", label: "Company", type: "text" },
+                    { name: "phone", label: "Phone", type: "tel" },
+                    { name: "email", label: "Email Address", type: "email" },
+                ].map((field) => (
+                    <div key={field.name} style={{ display: "flex", flexDirection: "column" }}>
+                        <input
+                            name={field.name}
+                            type={field.type}
+                            value={formData[field.name]}
+                            onChange={handleChange}
+                            placeholder={`Type ${field.label.toLowerCase()}`}
+                            required
+                            style={styles.input}
+                        />
+                        <div className="divider divider-neutral"></div>
+                    </div>
+                ))}
+
+                {/* Message Textarea */}
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Your message"
+                        rows={4}
+                        required
+                        style={styles.textarea}
+                    />
+                    <div className="divider divider-neutral"></div>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                    type="submit"
+                    className="rounded-full px-6 py-4 text-gray-200 font-bold text-sm md:text-base uppercase flex items-center justify-center gap-2 bg-gradient-to-r from-red-900 to-gray-700 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-sm"
+                    style={styles.button}
+                >
+                    Send message
+                </button>
+            </form>
         </div>
     );
 }

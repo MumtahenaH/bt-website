@@ -171,7 +171,7 @@ function Navbar() {
 
 const styles = {
   navLink: {
-    color: "#fff",
+    color: "#931f1d",
     textDecoration: "none",
     fontSize: "14px",
     fontFamily: "'Space Grotesk', sans-serif",
@@ -181,11 +181,11 @@ const styles = {
     padding: "8px 12px",
     borderRadius: "4px",
     ':hover': {
-      color: "#ddd",
+      color: "#fff",
     }
   },
   mobileNavLink: {
-    color: "#fff",
+    color: "#931f1d",
     textDecoration: "none",
     fontSize: "16px",
     fontFamily: "'Space Grotesk', sans-serif",

@@ -22,7 +22,7 @@ function Sol() {
                         {collapsibleItems.map((item, idx) => (
                             <div key={idx}>
                                 <div className="collapse collapse-arrow" style={styles.collapse}>
-                                    <input type="radio" name="accordion" defaultChecked={idx === 0} />
+                                    <input type="checkbox" name="accordion"  />
                                     <div className="collapse-title">{item.title}</div>
                                     <div className="collapse-content text-sm">{item.content}</div>
                                 </div>
@@ -60,7 +60,7 @@ function Sol() {
     };
 
     return (
-        <div style={{ backgroundColor: "#fff", minHeight: "100vh", width: "100%" }}>
+        <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh", width: "100%" }}>
             <ServicesSection />
         </div>
     );
@@ -84,7 +84,8 @@ const styles = {
         alignItems: "flex-start",
         justifyContent: "space-between",
         gap: "50px",
-        background: "#fff"
+        background: "#f5f5f5",
+       
     },
     imageContainer: {
         flex: 1,

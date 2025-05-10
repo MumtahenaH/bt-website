@@ -19,7 +19,7 @@ function Services() {
       <div
         style={{
           minHeight: isMobile ? "60vh" : "50vh",
-          backgroundImage: "url('/assets/elements.svg')",
+          backgroundcolor: "#ccc",
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",
@@ -58,161 +58,59 @@ function Services() {
         </a>
       </div>
 
-      {/* Data Center Solution Section */}
-      <ServiceSection 
-        title="DATA CENTER SOLUTION"
-        items={[
-          {
-            title: "DATA CENTER POWER SOLUTION",
-            content: [
-              "Grounding & Bonding System",
-              "Trunking Pathway",
-              "Distribution Switchgear",
-              "Power Cabling",
-              "Automatic Voltage Regulator (AVR)",
-              "Online UPS",
-              "ATS / STS",
-              "Basic / Smart Inteligent PDU",
-              "Lighting",
-              "Lightning Protection"
-            ]
-          },
-          "FIRE DETECTION & SUPRESSION SYSTEM",
-          "FIRE DOOR",
-          "DATA CENTER DOOR ACCESS CONTROL",
-          "NETWORK MONITORING SYSTEM (NMS)",
-          "ENVIROMENTAL MONITORING SYSTEM (EMS)"
-        ]}
-        image="/assets/service.jpg"
-        isMobile={isMobile}
-      />
+      <div style={{ padding: "60px 20px", backgroundColor: "#ccc" }}>
+  <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "20px" }}>
+  DATA CENTER SOLUTION
+  </h2>
+  <div style={{
+    display: "grid",
+    gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr",
+    gap: "20px",
+    maxWidth: "1200px",
+    margin: "0 auto"
+  }}>
+    {[
+      {
+        title: "Residential Services",
+        img: "/assets/service1.jpg",
+        desc: "Anyone who owns a home understands that plumbing issues can never be foreseen 100%."
+      },
+      {
+        title: "Commercial Services",
+        img: "/assets/service2.jpg",
+        desc: "No job is too large for us! Commercial properties need professional plumbers in any case..."
+      },
+      {
+        title: "Plumber Repair Works",
+        img: "/assets/service3.jpg",
+        desc: "Toilet Installation. Sink Installation. Water Heater Installation. Garbage Disposal..."
+      }
+    ].map((service, i) => (
+      <div key={i} style={{
+        backgroundColor: "#f9f9f9",
+        borderRadius: "8px",
+        overflow: "hidden",
+        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)"
+      }}>
+        <img src={service.img} alt={service.title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+        <div style={{ padding: "20px" }}>
+          <h3 style={{ fontSize: "1.25rem", marginBottom: "10px" }}>{service.title}</h3>
+          <p style={{ fontSize: "0.9rem", color: "#333" }}>{service.desc}</p>
+          <button className="btn btn-link mt-2">READ MORE</button>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
-      {/* Server & Storage Solution Section */}
-      <ServiceSection 
-        title="SERVER & STORAGE SOLUTION"
-        items={["IAM", "NAS", "SAN"]}
-        image="/assets/service.jpg"
-        reverse={true}
-        isMobile={isMobile}
-      />
 
-      {/* Premise Network Infrastructure Solution  → */}
-      <ServiceSection 
-        title="PREMISE NETWORK INFRASTRUCTURE SOLUTION"
-        items={["ROUTING, SWITCHING & SECURITY", "STRUCTURED CABLING SYSTEM", "SMART WI-FI", "IP TELEPHONE", "SURVEILLANCE SECURITY SYSTEM", "TIME ATTENDANCE & ACCESS CONTROL", "VIDEO CONFERENCING", "NETWORK MONITORING SYSTEM (NMS)"]}
-        image="/assets/service.jpg"
-        
-        isMobile={isMobile}
-      />
-      {/* Industrial / Commercial Automation Solution → */}
-      <ServiceSection 
-        title="INDUSTRIAL/COMMERCIAL AUTOMATION SOLUTION"
-        items={["ELECTRIFICATION DESIGN & IMPLEMENTATION", "COMMERCIAL POWER", "BUILDING MANAGEMENT SYSTEM (BMS)", "BUSBAR TRUNKING SYSTEM (BBT)", "FIRE DETECTION & PROTECTION SYSTEM", "GENERATOR", ]}
-        image="/assets/service.jpg"
-        reverse={true}
-        isMobile={isMobile}
-      />
-      {/* Transportation Sector Automation → */}
-      <ServiceSection 
-        title="TRANSPORTATION SECTOR AUTOMATION"
-        items={["EMERGENCY TELEPHONE SYSTEM", "OUTDOOR CABINETS", "VARIABLE MESSAGE SIGN", "OPTICAL LINE MONITORING", "WEATHERPROOF / EXPLOSIONG-PROOF LIGHTING",]}
-        image="/assets/service.jpg"
-        
-        isMobile={isMobile}
-      />
+
     </div>
   );
 }
 
 // Reusable Service Section Component
-function ServiceSection({ title, items, image, reverse = false, isMobile }) {
-  return (
-    <div
-      style={{
-        padding: isMobile ? "40px 20px" : "80px 20px",
-        maxWidth: "1200px",
-        minHeight: isMobile ? "auto" : "100vh",
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: isMobile ? "column" : reverse ? "row-reverse" : "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: isMobile ? "30px" : "50px",
-        background: "#fff",
-      }}
-    >
-      {/* Image Section */}
-      <div style={{ flex: 1 }}>
-        <img
-          src={image}
-          alt={title}
-          style={{
-            width: "100%",
-            height: isMobile ? "auto" : "100%",
-            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
-          }}
-        />
-      </div>
 
-      {/* Text Section */}
-      <div style={{ flex: 1 }}>
-        <h2
-          style={{
-            fontSize: isMobile ? "1.75rem" : "2rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            marginTop: "10px",
-            color: "#000",
-            fontWeight: "regular",
-            fontFamily: "'Space Grotesk', sans-serif",
-          }}
-        >
-          {title}
-        </h2>
 
-        <div style={{ 
-          fontWeight: "regular",
-          fontFamily: "'Space Grotesk', sans-serif",
-        }}>
-          {items.map((item, i) => (
-            <div key={i}>
-              {typeof item === 'object' ? (
-                <>
-                  <div className="collapse collapse-arrow" style={{ 
-                    fontSize: isMobile ? "1rem" : "1.125rem", 
-                    color: "#000" 
-                  }}>
-                    <input type="radio" name={`accordion-${title.replace(/\s+/g, '-')}`} defaultChecked />
-                    <div className="collapse-title font-thin">{item.title}</div>
-                    <div className="collapse-content text-sm">
-                      {item.content.map((point, j) => (
-                        <li key={j}>{point}</li>
-                      ))}
-                    </div>
-                  </div>
-                  {i < items.length - 1 && <div className="divider divider-neutral"></div>}
-                </>
-              ) : (
-                <>
-                  <div className="collapse" style={{ 
-                    fontSize: isMobile ? "1rem" : "1.125rem", 
-                    color: "#000" 
-                  }}>
-                    <input type="radio" name={`accordion-${title.replace(/\s+/g, '-')}`} />
-                    <div className="collapse-title font-thin">{item}</div>
-                  </div>
-                  {i < items.length - 1 && <div className="divider divider-neutral"></div>}
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-
-       
-      </div>
-    </div>
-  );
-}
 
 export default Services;
