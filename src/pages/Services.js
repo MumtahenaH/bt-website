@@ -215,7 +215,8 @@ function Services() {
                   <h3 style={{ 
                     fontSize: "1.25rem", 
                     marginBottom: "10px",
-                    minHeight: "60px"
+                    minHeight: "60px",
+                    color: "#333"
                   }}>
                     {service.title}
                   </h3>
@@ -226,16 +227,12 @@ function Services() {
                   }}>
                     {service.desc}
                   </p>
-                  <button style={{
-                    background: "none",
-                    border: "none",
-                    color: "#0066cc",
-                    cursor: "pointer",
-                    padding: "5px 0",
-                    fontWeight: "bold"
-                  }}>
-                    READ MORE
-                  </button>
+                  <div className="collapse collapse-arrow" style={{ fontSize: "22px",
+        color: "#000"}}>
+  <input type="checkbox" />
+  <div className="collapse-title font-semibold">Read More</div>
+  <div className="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+</div>
                 </div>
               </div>
             ))}
@@ -317,6 +314,8 @@ function Services() {
       <ServiceSection title="TRANSPORTATION SECTOR" services={allServices.transportation} />
     </div>
   );
-}
+};
+
+
 
 export default Services;
