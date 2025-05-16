@@ -8,6 +8,46 @@ function ClientPortfolio() {
   const slideRefs = useRef([]);
   const autoSlideInterval = useRef(null);
 
+  // Client portfolio data
+  const portfolioItems = [
+    {
+      title: "Bangladesh Army Aviation",
+      description: "Implemented advanced avionics systems for 50+ military helicopters, enhancing navigation accuracy by 40%.",
+      logo: "/assets/Roundel_of_Bangladesh_–_Army_Aviation.svg.png",
+      image: "/assets/Roundel_of_Bangladesh_–_Army_Aviation_resized.png"
+    },
+    {
+      title: "Walton Group",
+      description: "Deployed enterprise IoT solutions across 12 manufacturing plants, reducing energy costs by 25% annually.",
+      logo: "/assets/Walton_Group.svg.png",
+      image: "/assets/Walton_Group.svg.png"
+    },
+    {
+      title: "Beximco Pharmaceuticals",
+      description: "Automated pharmaceutical production lines serving 3 million patients monthly with 99.9% reliability.",
+      logo: "/assets/beximco-logo.png",
+      image: "/assets/pharma-project.jpg"
+    },
+    {
+      title: "Bangladesh Railway",
+      description: "Modernized signaling systems across 300km of rail network, improving safety and on-time performance.",
+      logo: "/assets/railway-logo.png",
+      image: "/assets/railway-project.jpg"
+    },
+    {
+      title: "Dhaka Power Distribution",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/dpdc-logo.png",
+      image: "/assets/power-project.jpg"
+    },
+    {
+      title: "Teletalk Bangladesh",
+      description: "5G network infrastructure deployment covering 15 major cities with 1Gbps speeds.",
+      logo: "/assets/teletalk-logo.png",
+      image: "/assets/telecom-project.jpg"
+    }
+  ];
+
   // Check for mobile view
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -38,13 +78,11 @@ function ClientPortfolio() {
     setCurrentSlide(slideNumber);
     const slideElement = slideRefs.current[slideNumber - 1];
     if (slideElement) {
-      // Use transform instead of scrollIntoView to prevent page jumping
       carouselRef.current.scrollTo({
         left: slideElement.offsetLeft,
         behavior: 'smooth'
       });
     }
-    // Reset the auto-slide timer
     clearInterval(autoSlideInterval.current);
     autoSlideInterval.current = setInterval(() => {
       goToNextSlide();
@@ -131,7 +169,7 @@ function ClientPortfolio() {
           }}
           className="font-light"
         >
-          Trusted By Millions
+          Trusted By Leading Organizations Nationwide
         </h2>
       </div>
 
@@ -140,28 +178,24 @@ function ClientPortfolio() {
         className="carousel w-full py-16 md:py-32" 
         ref={carouselRef}
         style={{
-          overflowX: 'hidden', // Prevent horizontal scrollbar flickering
-          scrollBehavior: 'smooth' // Enable smooth scrolling
+          overflowX: 'hidden',
+          scrollBehavior: 'smooth'
         }}
       >
-        {[1, 2, 3, 4].map((slideNum) => (
+        {portfolioItems.slice(0,4).map((client, index) => (
           <div 
-            id={`slide${slideNum}`} 
-            key={slideNum}
-            ref={el => slideRefs.current[slideNum - 1] = el}
+            id={`slide${index+1}`} 
+            key={index}
+            ref={el => slideRefs.current[index] = el}
             className="carousel-item relative w-full justify-center items-center"
             style={{
-              flex: '0 0 100%' // Ensure each slide takes full width
+              flex: '0 0 100%'
             }}
           >
             <img
-              src={
-                slideNum % 2 === 1 
-                  ? "/assets/Roundel_of_Bangladesh_–_Army_Aviation.svg.png" 
-                  : "/assets/Walton_Group.svg.png"
-              }
+              src={client.logo}
               className={`${isMobile ? "w-24" : "w-32"} max-h-32 object-contain`}
-              alt={`Client Logo ${slideNum}`}
+              alt={`${client.title} Logo`}
             />
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
               <button 
@@ -200,24 +234,25 @@ function ClientPortfolio() {
       </div>
 
       {/* Portfolio Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-16 justify-center items-center py-10">
-        {[...Array(6)].map((_, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-16 justify-center items-center py-10 pb-20">
+        {portfolioItems.map((item, index) => (
           <div 
             key={index} 
-            className="card bg-white shadow-sm w-full max-w-md mx-auto hover:shadow-md transition-shadow duration-300"
+            className="card bg-white shadow-sm w-full max-w-md mx-auto hover:shadow-md transition-all duration-300 group"
           >
-            <figure className="w-full">
+            <figure className="w-full overflow-hidden">
               <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Portfolio Item"
-                className="w-full h-48 object-cover"
+                src={item.image}
+                alt={item.title}
+                className={`w-full max-h-76 object-cover transition-transform duration-500 ${!isMobile ? 'group-hover:scale-110' : ''}`}
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-black">Project Title</h2>
-              <p className="text-black">
-                Project Description
+              <h2 className="card-title text-black">{item.title}</h2>
+              <p className="text-black text-sm">
+                {item.description}
               </p>
+             
             </div>
           </div>
         ))}
