@@ -1,80 +1,377 @@
+import { useEffect, useState } from 'react';
+
 function AboutUs() {
-    return (
-        <div style={{ backgroundColor: "#fff" }}>
-            
-            <div
-                style={{
-                    position: "relative",
-                    minHeight: "50vh",
-                    backgroundImage: "url('/assets/aboutus.svg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    textAlign: "center",
-                    overflow: "hidden", // Ensures the overlay doesn't exceed bounds
-                }}
-            >
-                {/* Black Overlay */}
-                <div
-                    style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust opacity as needed
-                        zIndex: 1, // Ensures it's behind text
-                    }}
-                ></div>
+  const [isMobile, setIsMobile] = useState(false);
 
-                {/* Text Content */}
-                <a
-                    style={{
-                        fontSize: "3rem",
-                        fontFamily: "'Space Grotesk', sans-serif",
-                        color: "white",
-                        marginBottom: "20px",
-                        padding: "70px",
-                        position: "relative", // Keeps it above the overlay
-                        zIndex: 2, 
-                    }}
-                    className="font-light"
-                >
-                    About Us
-                </a>
-            </div>
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-            {/* About Us Description Section */}
-            <div
-                style={{
-                    padding: "80px 150px",
-                    maxWidth: "1200px",
-                    minHeight: "100vh",
-                    margin: "0 auto",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    background: "#fff",
-                    textAlign: "center",
-                }}
-            >
-                <a
-                    style={{
-                        fontSize: "3rem",
-                        fontFamily: "'Space Grotesk', sans-serif",
-                        color: "black",
-                        maxWidth: "800px",
-                    }}
-                    className="font-light"
-                >
-                    About Us Description
-                </a>
-            </div>
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const teamMembers = [
+    {
+      name: "Employee 1",
+      position: "CTO",
+      bio: "Technology visionary with 15+ years in infrastructure solutions.",
+      img: "/assets/team1.jpg"
+    },
+    {
+      name: "Emloyee 2",
+      position: "Head of Engineering",
+      bio: "Specializes in network architecture and industrial automation.",
+      img: "/assets/team2.jpg"
+    },
+    {
+      name: "Employee 3",
+      position: "Director of Operations",
+      bio: "Expert in data center management and logistics solutions.",
+      img: "/assets/team3.jpg"
+    },
+    {
+      name: "Employee 4",
+      position: "Customer Success Lead",
+      bio: "Dedicated to ensuring client satisfaction and solution optimization.",
+      img: "/assets/team4.jpg"
+    }
+  ];
+
+  return (
+    <div style={{ backgroundColor: "#fff" }}>
+      {/* Hero Section */}
+      <div
+        style={{
+          position: "relative",
+          minHeight: isMobile ? "40vh" : "60vh",
+          backgroundColor: "#fff",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            zIndex: 1,
+          }}
+        ></div>
+
+        <h1
+          style={{
+            fontSize: isMobile ? "2.5rem" : "4rem",
+            color: "white",
+            marginBottom: "20px",
+            position: "relative",
+            zIndex: 2,
+            fontWeight: 300,
+            padding: isMobile ? "0 20px" : "0",
+            lineHeight: 1.2
+          }}
+        >
+          About Our Company
+        </h1>
+        <p style={{
+          fontSize: isMobile ? "1rem" : "1.2rem",
+          color: "rgba(255,255,255,0.9)",
+          maxWidth: "800px",
+          position: "relative",
+          zIndex: 2,
+          padding: isMobile ? "0 20px" : "0"
+        }}>
+          Pioneering technology solutions since 1998
+        </p>
+      </div>
+
+      {/* Company Overview */}
+      <div style={{
+        padding: isMobile ? "60px 20px" : "80px 40px",
+        maxWidth: "1200px",
+        margin: "0 auto"
+      }}>
+        <h2 style={{
+          fontSize: isMobile ? "1.8rem" : "2.5rem",
+          textAlign: "center",
+          marginBottom: "40px",
+          fontWeight: 300,
+          color: "#333"
+        }}>
+          Who We Are
+        </h2>
+        <div style={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          gap: "40px",
+          alignItems: "center"
+        }}>
+          <div style={{ flex: 1 }}>
+            <p style={{
+              fontSize: isMobile ? "1rem" : "1.1rem",
+              lineHeight: 1.6,
+              color: "#555",
+              marginBottom: "20px"
+            }}>
+              We are a leading provider of comprehensive technology infrastructure solutions, 
+              specializing in data center services, network infrastructure, industrial automation, 
+              and transportation systems. Founded in 2010, we've grown from a small startup to 
+              a trusted partner for enterprises across multiple industries.
+            </p>
+            <p style={{
+              fontSize: isMobile ? "1rem" : "1.1rem",
+              lineHeight: 1.6,
+              color: "#555"
+            }}>
+              Our team of certified professionals delivers innovative, reliable solutions 
+              tailored to each client's unique needs, helping businesses optimize their 
+              operations and achieve their strategic goals.
+            </p>
+          </div>
+          <div style={{
+            flex: 1,
+            borderRadius: "8px",
+            overflow: "hidden",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
+          }}>
+            <img 
+              src="/assets/office.jpg" 
+              alt="Our headquarters" 
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block"
+              }}
+            />
+          </div>
         </div>
-    );
+      </div>
+
+      {/* Mission and Values */}
+      <div style={{
+        backgroundColor: "#931f1d",
+        padding: isMobile ? "60px 20px" : "80px 40px"
+      }}>
+        <div style={{
+          maxWidth: "1200px",
+          margin: "0 auto"
+        }}>
+          <h2 style={{
+            fontSize: isMobile ? "1.8rem" : "2.5rem",
+            textAlign: "center",
+            marginBottom: "40px",
+            fontWeight: 300,
+            color: "#fff"
+          }}>
+            Our Mission & Values
+          </h2>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+            gap: "30px"
+          }}>
+            <div style={{
+              backgroundColor: "#fff",
+              padding: "30px",
+              borderRadius: "8px",
+              boxShadow: "0 5px 15px rgba(0,0,0,0.05)"
+            }}>
+              <h3 style={{
+                fontSize: "1.3rem",
+                marginBottom: "15px",
+                color: "#222"
+              }}>Innovation</h3>
+              <p style={{
+                fontSize: "1rem",
+                lineHeight: 1.6,
+                color: "#555"
+              }}>
+                We constantly push boundaries to deliver cutting-edge solutions that drive business transformation.
+              </p>
+            </div>
+            <div style={{
+              backgroundColor: "#fff",
+              padding: "30px",
+              borderRadius: "8px",
+              boxShadow: "0 5px 15px rgba(0,0,0,0.05)"
+            }}>
+              <h3 style={{
+                fontSize: "1.3rem",
+                marginBottom: "15px",
+                color: "#222"
+              }}>Integrity</h3>
+              <p style={{
+                fontSize: "1rem",
+                lineHeight: 1.6,
+                color: "#555"
+              }}>
+                We build trust through transparency, honesty, and ethical business practices.
+              </p>
+            </div>
+            <div style={{
+              backgroundColor: "#fff",
+              padding: "30px",
+              borderRadius: "8px",
+              boxShadow: "0 5px 15px rgba(0,0,0,0.05)"
+            }}>
+              <h3 style={{
+                fontSize: "1.3rem",
+                marginBottom: "15px",
+                color: "#222"
+              }}>Excellence</h3>
+              <p style={{
+                fontSize: "1rem",
+                lineHeight: 1.6,
+                color: "#555"
+              }}>
+                We're committed to delivering superior quality in every solution and interaction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Team Section */}
+      <div style={{
+        padding: isMobile ? "60px 20px" : "80px 40px",
+        maxWidth: "1200px",
+        margin: "0 auto"
+      }}>
+        <h2 style={{
+          fontSize: isMobile ? "1.8rem" : "2.5rem",
+          textAlign: "center",
+          marginBottom: "40px",
+          fontWeight: 300,
+          color: "#333"
+        }}>
+          Meet Our Team
+        </h2>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
+          gap: "30px",
+          marginBottom: "60px"
+        }}>
+          {teamMembers.map((member, index) => (
+            <div key={index} style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              gap: "20px",
+              alignItems: "center",
+              backgroundColor: "#fff",
+              borderRadius: "8px",
+              padding: "20px",
+              boxShadow: "0 5px 15px rgba(0,0,0,0.05)"
+            }}>
+              <div style={{
+                width: isMobile ? "120px" : "150px",
+                height: isMobile ? "120px" : "150px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                flexShrink: 0
+              }}>
+                <img 
+                  src={member.img} 
+                  alt={member.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                  }}
+                />
+              </div>
+              <div>
+                <h3 style={{
+                  fontSize: "1.3rem",
+                  marginBottom: "5px",
+                  color: "#222"
+                }}>{member.name}</h3>
+                <p style={{
+                  fontSize: "1rem",
+                  color: "#666",
+                  marginBottom: "10px"
+                }}>{member.position}</p>
+                <p style={{
+                  fontSize: "0.95rem",
+                  lineHeight: 1.5,
+                  color: "#555"
+                }}>{member.bio}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CEO Spotlight */}
+        <div style={{
+          backgroundColor: "#931f1d",
+          borderRadius: "8px",
+          padding: "40px",
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          gap: "40px",
+          alignItems: "center"
+        }}>
+          <div style={{
+            width: isMobile ? "180px" : "250px",
+            height: isMobile ? "180px" : "250px",
+            borderRadius: "8px",
+            overflow: "hidden",
+            flexShrink: 0,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.1)"
+          }}>
+            <img 
+              src="/assets/ceo.jpg" 
+              alt="CEO"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover"
+              }}
+            />
+          </div>
+          <div>
+            <h3 style={{
+              fontSize: isMobile ? "1.5rem" : "2rem",
+              marginBottom: "10px",
+              color: "#fff"
+            }}>Full Name</h3>
+            <p style={{
+              fontSize: "1.1rem",
+              color: "#fff",
+              marginBottom: "20px"
+            }}>Founder & CEO</p>
+            <p style={{
+              fontSize: "1rem",
+              lineHeight: 1.6,
+              color: "#fff",
+              marginBottom: "20px"
+            }}>
+              Description.
+            </p>
+            <p style={{
+              fontSize: "1rem",
+              lineHeight: 1.6,
+              color: "#fff",
+              fontStyle: "italic"
+            }}>
+              "His personal quote."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default AboutUs;
