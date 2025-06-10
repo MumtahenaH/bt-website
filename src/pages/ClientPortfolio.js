@@ -56,16 +56,16 @@ function ClientPortfolio() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Initialize slide refs
+  
   useEffect(() => {
     slideRefs.current = slideRefs.current.slice(0, totalSlides);
   }, []);
 
-  // Auto-slide functionality
+  // Auto-slide 
   useEffect(() => {
     autoSlideInterval.current = setInterval(() => {
       goToNextSlide();
-    }, 3000); // Change slide every 3 seconds
+    }, 3000);
 
     return () => {
       if (autoSlideInterval.current) {
