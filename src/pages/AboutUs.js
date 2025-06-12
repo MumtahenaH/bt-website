@@ -47,7 +47,7 @@ function AboutUs() {
         style={{
           position: "relative",
           minHeight: isMobile ? "40vh" : "60vh",
-          backgroundColor: "#fff",
+          backgroundImage: "url(/assets/1801886b-974d-41bb-bd87-7c743c706d4f.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
@@ -59,34 +59,33 @@ function AboutUs() {
         }}
       >
         <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            zIndex: 1,
-          }}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",  // Adjust opacity
+                zIndex: 1
+              }}
         ></div>
 
         <h1
           style={{
-            fontSize: isMobile ? "2.5rem" : "4rem",
-            color: "white",
-            marginBottom: "20px",
+            fontSize: isMobile ? "2rem" : "3rem",
+            fontFamily: "'Space Grotesk', sans-serif",
             position: "relative",
             zIndex: 2,
-            fontWeight: 300,
-            padding: isMobile ? "0 20px" : "0",
-            lineHeight: 1.2
+            padding: isMobile ? "20px" : "0", 
+            textShadow: "0 2px 6px rgba(0,0,0,0.3)",
+            color: "#931f1d"
           }}
         >
           About Our Company
         </h1>
         <p style={{
           fontSize: isMobile ? "1rem" : "1.2rem",
-          color: "rgba(255,255,255,0.9)",
+          color: "#931f1d",
           maxWidth: "800px",
           position: "relative",
           zIndex: 2,

@@ -84,7 +84,7 @@ const styles = {
         alignItems: "flex-start",
         justifyContent: "space-between",
         gap: "50px",
-        background: "#f5f5f5",
+        backgroundImage: "#f5f5f5",
        
     },
     imageContainer: {

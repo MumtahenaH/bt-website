@@ -8,6 +8,9 @@ import Services from './pages/Services';
 import ClientPortfolio from './pages/ClientPortfolio';
 import ContactUs from './pages/Contact';
 
+import AdminPage from './pages/admin';
+import AdminLogin from './pages/adminlogin';
+
 
 function App() {
   return (
@@ -20,6 +23,8 @@ function App() {
       <Route path="/about" element={<About/>} />
       <Route path="/clients" element={<ClientPortfolio/>} />
       <Route path="/contactus" element={<ContactUs/>} />
+      <Route path="/1234" element={<AdminPage/>} />
+      <Route path="/12345" element={<AdminLogin/>} />
      
     </Routes>
   </Router>

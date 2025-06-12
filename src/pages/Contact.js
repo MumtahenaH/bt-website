@@ -39,7 +39,7 @@ function ContactUs() {
         style={{
           position: "relative",
           minHeight: isMobile ? "40vh" : "50vh",
-          backgroundImage: "url('/assets/aboutus.svg')",
+          backgroundImage: "url(/assets/1801886b-974d-41bb-bd87-7c743c706d4f.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
@@ -58,8 +58,8 @@ function ContactUs() {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 1,
+            backgroundColor: "rgba(255, 255, 255, 0.7)",  // Adjust opacity
+            zIndex: 1
           }}
         ></div>
 
@@ -68,12 +68,13 @@ function ContactUs() {
           style={{
             fontSize: isMobile ? "2rem" : "3rem",
             fontFamily: "'Space Grotesk', sans-serif",
-            color: "white",
             position: "relative",
             zIndex: 2,
-            padding: isMobile ? "20px" : "0",
+            padding: isMobile ? "20px" : "0", 
+            textShadow: "0 2px 6px rgba(0,0,0,0.3)",
+            color: "#931f1d"
           }}
-          className="font-light"
+         
         >
           Contact Us
         </h1>

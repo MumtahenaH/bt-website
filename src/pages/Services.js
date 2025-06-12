@@ -343,10 +343,10 @@ function Services() {
   return (
     <div style={{ backgroundColor: "#fff" }}>
       {/* Hero Section */}
-      <div
+      <div 
         style={{
           minHeight: isMobile ? "40vh" : "50vh",
-          backgroundColor: "#ccc",
+          backgroundImage: "url(/assets/1801886b-974d-41bb-bd87-7c743c706d4f.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",
@@ -358,14 +358,14 @@ function Services() {
           padding: isMobile ? "0 20px" : "0"
         }}
       >
-        <div
+        <div className="absolute inset-0 bg-white bg-opacity-70"
           style={{
             position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            
             zIndex: 1,
           }}
         ></div>
@@ -379,7 +379,9 @@ function Services() {
             zIndex: 2,
             lineHeight: "1.3",
             maxWidth: "800px",
-            fontWeight: "300"
+            fontWeight: "400",
+            color: "#931f1d",
+            textShadow: "0 2px 6px rgba(0,0,0,0.3)",
           }}
         >
           Solutions and Services
