@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 function ClientPortfolio() {
   const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(1);
-  const totalSlides = 4;
+  
   const carouselRef = useRef(null);
   const slideRefs = useRef([]);
   const autoSlideInterval = useRef(null);
@@ -17,37 +17,255 @@ function ClientPortfolio() {
       image: "/assets/Roundel_of_Bangladesh_–_Army_Aviation_resized.png"
     },
     {
-      title: "Walton Group",
+      title: "BCPCL (Bangladesh-China Power Company Pvt. Limited)",
       description: "Deployed enterprise IoT solutions across 12 manufacturing plants, reducing energy costs by 25% annually.",
-      logo: "/assets/Walton_Group.svg.png",
-      image: "/assets/Walton_Group.svg.png"
+      logo: "/assets/carousel/BCPCL.jpg",
+      image: "/assets/carousel/BCPCL.jpg"
     },
     {
-      title: "Beximco Pharmaceuticals",
+      title: "BRAC Bank",
       description: "Automated pharmaceutical production lines serving 3 million patients monthly with 99.9% reliability.",
-      logo: "/assets/beximco-logo.png",
-      image: "/assets/pharma-project.jpg"
+      logo: "/assets/carousel/bracbank.jpg",
+      image: "/assets/carousel/bracbank.jpg"
     },
     {
-      title: "Bangladesh Railway",
+      title: "Bangladesh Eye Hospital",
       description: "Modernized signaling systems across 300km of rail network, improving safety and on-time performance.",
-      logo: "/assets/railway-logo.png",
-      image: "/assets/railway-project.jpg"
+      logo: "/assets/carousel/BangldeshEyeHospital.jpeg",
+      image: "/assets/carousel/BangldeshEyeHospital.jpeg"
     },
     {
-      title: "Dhaka Power Distribution",
+      title: "JTI (Japan Tobacco International)",
       description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
-      logo: "/assets/dpdc-logo.png",
-      image: "/assets/power-project.jpg"
+      logo: "/assets/carousel/JTI__Logo.jpg",
+      image: "/assets/carousel/JTI__Logo.jpg"
     },
     {
-      title: "Teletalk Bangladesh",
+      title: "FAO (Food and Agriculture Organization of the United Nations)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/fao.png",
+      image: "/assets/carousel/fao.png"
+    },
+    {
+      title: "G4S (Group 4 Securicor)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/g4s.png",
+      image: "/assets/carousel/g4s.png"
+    },
+    {
+      title: "Intercooperation (Swiss Agency for Development and Cooperation)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/intercooperation.png",
+      image: "/assets/carousel/intercooperation.png"
+    },
+    {
+      title: "LI & FUNG",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/li&fung.png",
+      image: "/assets/carousel/li&fung.png"
+    },
+    {
+      title: "Military Institute of Science and Technology (MIST)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/mist.png",
+      image: "/assets/carousel/mist.png"
+    },
+    {
+      title: "ICC (International Chamber of Commerce)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/ICC-logo-new.jpg",
+      image: "/assets/carousel/ICC-logo-new.jpg"
+    },
+    {
+      title: "International Labour Organization (ILO)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/ilo.png",
+      image: "/assets/carousel/ilo.png"
+    },
+    {
+      title: "Standard Chartered Bank",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/standardchartered.jpg",
+      image: "/assets/carousel/standardchartered.jpg"
+    },
+    {
+      title: "Prime Bank Limited",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/primebankofficial_logo.jpg",
+      image: "/assets/carousel/primebankofficial_logo.jpg"
+    },
+    {
+      title: "Rajshahi University",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/RU.jpg",
+      image: "/assets/carousel/RU.jpg"
+    },
+    {
+      title: "DEKKO ISHO Group",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/dekkoisho.png",
+      image: "/assets/carousel/dekkoisho.png"
+    },
+    {
+      title: "North-West Power Generation Company Limited",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/northwest.png",
+      image: "/assets/carousel/northwest.png"
+    },
+    {
+      title: "UNDP (United Nations Development Programme)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/undp.png",
+      image: "/assets/carousel/undp.png"
+    },
+    {
+      title: "Wachovia",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/wachovia.png",
+      image: "/assets/carousel/wachovia.png"
+    },
+    {
+      title: "Jamalpur Science & Technology University",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/jstu.png",
+      image: "/assets/carousel/jstu.png"
+    },
+    {
+      title: "Bangladesh Specialized Hospital",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/bangladesh-specialized-hospital.jpg",
+      image: "/assets/carousel/bangladesh-specialized-hospital.jpg"
+    },
+    {
+      title: "Jahangirnagar University",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/Jahangirnagar_University_Logo.jpg",
+      image: "/assets/carousel/Jahangirnagar_University_Logo.jpg"
+    },
+
+    {
+      title: "University of Asia Pacific",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/UAP.png",
+      image: "/assets/carousel/UAP.png"
+    },
+
+    
+
+    {
+      title: "Clariant",
       description: "5G network infrastructure deployment covering 15 major cities with 1Gbps speeds.",
-      logo: "/assets/teletalk-logo.png",
-      image: "/assets/telecom-project.jpg"
+      logo: "/assets/carousel/clariant.jpg",
+      image: "/assets/carousel/clariant.jpg"
     }
   ];
+  const slideItems = [
+    {
+      title: "Bangladesh Army Aviation",
+      description: "Implemented advanced avionics systems for 50+ military helicopters, enhancing navigation accuracy by 40%.",
+      logo: "/assets/Roundel_of_Bangladesh_–_Army_Aviation.svg.png",
+      image: "/assets/Roundel_of_Bangladesh_–_Army_Aviation_resized.png"
+    },
+    {
+      title: "BCPCL (Bangladesh-China Power Company Pvt. Limited)",
+      description: "Deployed enterprise IoT solutions across 12 manufacturing plants, reducing energy costs by 25% annually.",
+      logo: "/assets/carousel/BCPCL.jpg",
+      image: "/assets/carousel/BCPCL.jpg"
+    },
+    {
+      title: "BRAC Bank",
+      description: "Automated pharmaceutical production lines serving 3 million patients monthly with 99.9% reliability.",
+      logo: "/assets/carousel/bracbank.jpg",
+      image: "/assets/carousel/bracbank.jpg"
+    },
+    {
+      title: "Bangladesh Eye Hospital",
+      description: "Modernized signaling systems across 300km of rail network, improving safety and on-time performance.",
+      logo: "/assets/carousel/BangldeshEyeHospital.jpeg",
+      image: "/assets/carousel/BangldeshEyeHospital.jpeg"
+    },
+    {
+      title: "JTI (Japan Tobacco International)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/JTI__Logo.jpg",
+      image: "/assets/carousel/JTI__Logo.jpg"
+    },
+    {
+      title: "FAO (Food and Agriculture Organization of the United Nations)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/fao.png",
+      image: "/assets/carousel/fao.png"
+    },
+    {
+      title: "G4S (Group 4 Securicor)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/g4s.png",
+      image: "/assets/carousel/g4s.png"
+    },
 
+    {
+      title: "Military Institute of Science and Technology (MIST)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/mist.png",
+      image: "/assets/carousel/mist.png"
+    },
+    
+    {
+      title: "International Labour Organization (ILO)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/ilo.png",
+      image: "/assets/carousel/ilo.png"
+    },
+    {
+      title: "Standard Chartered Bank",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/standardchartered.jpg",
+      image: "/assets/carousel/standardchartered.jpg"
+    },
+    {
+      title: "Prime Bank Limited",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/primebankofficial_logo.jpg",
+      image: "/assets/carousel/primebankofficial_logo.jpg"
+    },
+    {
+      title: "Rajshahi University",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/RU.jpg",
+      image: "/assets/carousel/RU.jpg"
+    },
+    {
+      title: "DEKKO ISHO Group",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/dekkoisho.png",
+      image: "/assets/carousel/dekkoisho.png"
+    },
+ 
+    {
+      title: "UNDP (United Nations Development Programme)",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/undp.png",
+      image: "/assets/carousel/undp.png"
+    },
+   
+
+    {
+      title: "Jahangirnagar University",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/bangladesh-specialized-hospital.jpg",
+      image: "/assets/carousel/bangladesh-specialized-hospital.jpg"
+    },
+
+
+    {
+      title: "Bangladesh Specialized Hospital",
+      description: "Smart grid implementation reduced outage times by 65% for 2 million metro residents.",
+      logo: "/assets/carousel/bangladesh-specialized-hospital.jpg",
+      image: "/assets/carousel/bangladesh-specialized-hospital.jpg"
+    },
+
+  ];
+  const totalSlides = slideItems.length;
   // Check for mobile view
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -182,7 +400,7 @@ function ClientPortfolio() {
           scrollBehavior: 'smooth'
         }}
       >
-        {portfolioItems.slice(0,4).map((client, index) => (
+        {portfolioItems.map((client, index) => (
           <div 
             id={`slide${index+1}`} 
             key={index}
@@ -223,7 +441,8 @@ function ClientPortfolio() {
 
       {/* Slide Indicators */}
       <div className="flex justify-center gap-2 pb-8">
-        {[1, 2, 3, 4].map((slideNum) => (
+      {Array.from({ length: totalSlides }, (_, i) => i + 1).map((slideNum) => (
+
           <button
             key={slideNum}
             onClick={() => goToSlide(slideNum)}

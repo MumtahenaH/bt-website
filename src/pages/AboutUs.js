@@ -124,20 +124,29 @@ function AboutUs() {
               color: "#555",
               marginBottom: "20px"
             }}>
-              We are a leading provider of comprehensive technology infrastructure solutions, 
-              specializing in data center services, network infrastructure, industrial automation, 
-              and transportation systems. Founded in 2010, we've grown from a small startup to 
-              a trusted partner for enterprises across multiple industries.
+             We commenced business in December, 1996 with the focus on
+providing high quality and cost-effective ICT solutions and support
+services.
+
+<br/>
+<br/>
+
+Our Mission is to continue serving as an ICT infrastructure solution
+providing company, focusing on People, Process & Technology, to
+deliver functional, flexible and scalable infrastructure solutions with
+optimal ROI.
             </p>
             <p style={{
               fontSize: isMobile ? "1rem" : "1.1rem",
               lineHeight: 1.6,
               color: "#555"
             }}>
-              Our team of certified professionals delivers innovative, reliable solutions 
-              tailored to each client's unique needs, helping businesses optimize their 
-              operations and achieve their strategic goals.
+              27 years down the road, we have toiled hard and obtained
+              confidence of our Clientele.
+
             </p>
+           
+           
           </div>
           <div style={{
             flex: 1,
