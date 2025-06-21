@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, handleChange, handleSubmit } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 function ContactUs() {
   const [isMobile, setIsMobile] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  
 
   // Check for mobile view
   useEffect(() => {
@@ -17,20 +13,31 @@ function ContactUs() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const [result, setResult] = React.useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Add your form submission logic (API call, etc.)
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "9c856ef9-695e-47ec-829c-ee10995a25db");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
+  
 
   return (
     <div style={{ backgroundColor: "#fff" }}>
@@ -119,8 +126,8 @@ function ContactUs() {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium font-['Space_Grotesk'] text-black">Phone Numbers</h3>
                   <p className="mt-1 text-gray-600">
-                    Main: +880 m-a-i-n<br />
-                    Mobile: +880 m-o-b
+                  +880-2-9128608<br />
+                  +880-2-9130322
                   </p>
                 </div>
               </div>
@@ -133,13 +140,13 @@ function ContactUs() {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium font-['Space_Grotesk'] text-black">Email</h3>
                   <p className="mt-1 text-gray-600">
-                    info@bitm.org.bd<br />
-                    support@bitm.org.bd
+                  bt@citechco.net<br />
+                    
                   </p>
                 </div>
               </div>
 
-              {/* Social Media */}
+              {/* Social Media 
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
                   <div className="h-5 w-5 flex items-center justify-center">
@@ -166,14 +173,15 @@ function ContactUs() {
                   </div>
                 </div>
               </div>
+*/}
+
             </div>
           </div>
 
           {/* Right Column - Google Map */}
           <div className="h-full">
             <div className="bg-gray-100 rounded-lg overflow-hidden h-full min-h-[400px]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d703.9756004698811!2d90.3723290645919!3d23.755450968731193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf5374445555%3A0xa20236c8b271a2ba!2sBusiness%20Technologies!5e0!3m2!1sen!2sbd!4v1744438731056!5m2!1sen!2sbd"
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d228.2371923277288!2d90.3691543858429!3d23.75468592009448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1750393943065!5m2!1sen!2sbd" 
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -190,16 +198,16 @@ function ContactUs() {
           <h2 className="text-2xl md:text-3xl font-light font-['Space_Grotesk'] text-black text-center mb-8">
             Send Us a Message
           </h2>
-          <form onSubmit={handleSubmit} className="mt-8 bg-gray-100 p-6 rounded-lg shadow-md w-full">
+          <form onSubmit={onSubmit} className="mt-8 bg-gray-100 p-6 rounded-lg shadow-md w-full">
             <div className="mb-7">
              
               <input
                 type="text"
                 name="name"
                 placeholder='Name'
-                value={formData.name}
+               
                 onChange={handleChange}
-                className="w-full px-4 py-2 bg-gray-200 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 bg-gray-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -209,9 +217,9 @@ function ContactUs() {
                 type="email"
                 name="email"
                 placeholder='Email'
-                value={formData.email}
+                
                 onChange={handleChange}
-                className="w-full px-4 py-2 bg-gray-200 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 bg-gray-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -220,10 +228,10 @@ function ContactUs() {
               <textarea
                 name="message"
                 placeholder='Message'
-                value={formData.message}
+                
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-4 py-2 bg-gray-200 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 bg-gray-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               ></textarea>
             </div>
@@ -235,7 +243,10 @@ function ContactUs() {
               Send Message
             </button>
           </form>
+          <span>{result}</span>
         </div>
+
+
       </div>
     </div>
   );
