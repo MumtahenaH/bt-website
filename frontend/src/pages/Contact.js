@@ -1,4 +1,4 @@
-import React, { useState, useEffect, handleChange, handleSubmit } from 'react';
+import React, { useState, useEffect, handleSubmit } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 function ContactUs() {
@@ -206,7 +206,7 @@ function ContactUs() {
                 name="name"
                 placeholder='Name'
                
-                onChange={handleChange}
+             
                 className="w-full px-4 py-2 bg-gray-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -218,7 +218,7 @@ function ContactUs() {
                 name="email"
                 placeholder='Email'
                 
-                onChange={handleChange}
+               
                 className="w-full px-4 py-2 bg-gray-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -229,7 +229,7 @@ function ContactUs() {
                 name="message"
                 placeholder='Message'
                 
-                onChange={handleChange}
+           
                 rows="4"
                 className="w-full px-4 py-2 bg-gray-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required

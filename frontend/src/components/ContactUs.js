@@ -1,4 +1,4 @@
-import React, { useState, useEffect, handleChange, handleSubmit } from "react";
+import React, {useState, } from "react";
 
 function ContactUs() {
     const [formData, setFormData] = useState({
@@ -65,7 +65,7 @@ function ContactUs() {
                             name={field.name}
                             type={field.type}
                             
-                            onChange={handleChange}
+                           
                             placeholder={`Type ${field.label.toLowerCase()}`}
                             required
                             className="p-3 md:p-4 bg-[#f9f2ee] border-b border-neutral-300 text-center focus:outline-none text-black placeholder:text-gray-500"
@@ -78,7 +78,7 @@ function ContactUs() {
                     <textarea
                         name="message"
                        
-                        onChange={handleChange}
+                        
                         placeholder="Your message"
                         rows={4}
                         required
