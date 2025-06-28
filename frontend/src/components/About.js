@@ -3,7 +3,27 @@ import { useEffect, useRef, useState } from "react";
 function About() {
   const textRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+const [buttonVisible, setButtonVisible] = useState(false);
+ const buttonRef = useRef(null);
+   useEffect(() => {
+     const observeElement = (ref, setter, delay = 0) => {
+       const observer = new IntersectionObserver(
+         ([entry]) => {
+           if (entry.isIntersecting) {
+             setTimeout(() => setter(true), delay);
+             observer.unobserve(entry.target);
+           }
+         },
+         { threshold: 0.2 }
+       );
+       if (ref.current) observer.observe(ref.current);
+     };
+ 
 
+
+     observeElement(buttonRef, setButtonVisible, 600);
+ 
+   }, []);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -76,56 +96,18 @@ function About() {
            GET IN TOUCH WITH US TODAY.
         </a>
 
-        <button
-          style={{
-            borderRadius: "999px",
-            padding: "16px 24px",
-            backgroundColor: "#ffffff",
-            border: "2px solid #ffffff",
-            color: "#000",
-            fontWeight: "bold",
-            fontSize: "14px",
-            textTransform: "uppercase",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-            cursor: "pointer",
-            transition: "all 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.transform = "scale(1.05)";
-            e.currentTarget.style.boxShadow =
-              "0px 8px 12px rgba(0, 0, 0, 0.2)";
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-            e.currentTarget.style.boxShadow =
-              "0px 4px 6px rgba(0, 0, 0, 0.1)";
-          }}
-          onMouseDown={(e) => {
-            e.currentTarget.style.transform = "scale(0.95)";
-            e.currentTarget.style.boxShadow =
-              "0px 2px 4px rgba(0, 0, 0, 0.15)";
-          }}
-          onMouseUp={(e) => {
-            e.currentTarget.style.transform = "scale(1.05)";
-            e.currentTarget.style.boxShadow =
-              "0px 8px 12px rgba(0, 0, 0, 0.2)";
-          }}
+        <div
+          ref={buttonRef}
+          className={`${buttonVisible ? "fade-in-up" : "opacity-0"} flex justify-left`}
         >
-          <a href="/contactus">
-            Learn More{" "}
-            <span
-              style={{
-                fontSize: "16px",
-                transition: "transform 0.3s ease-in-out",
-              }}
-            >
-              →
-            </span>
-          </a>
-        </button>
+          <button className="rounded-full px-6 py-4 text-gray-200 font-bold text-sm md:text-base uppercase flex items-center gap-2 bg-gradient-to-r from-red-900 to-gray-700 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-sm">
+            <a href="/about">
+              Learn More <span className="text-lg transition-transform">→</span>
+            </a>
+          </button>
+        </div>
+
+
       </section>
     </div>
   );

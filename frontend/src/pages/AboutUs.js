@@ -18,25 +18,25 @@ function AboutUs() {
       name: "Employee 1",
       position: "CTO",
       bio: "Technology visionary with 15+ years in infrastructure solutions.",
-      img: "/assets/team1.jpg"
+      img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
     },
     {
       name: "Emloyee 2",
       position: "Head of Engineering",
       bio: "Specializes in network architecture and industrial automation.",
-      img: "/assets/team2.jpg"
+      img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
     },
     {
       name: "Employee 3",
       position: "Director of Operations",
       bio: "Expert in data center management and logistics solutions.",
-      img: "/assets/team3.jpg"
+      img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
     },
     {
       name: "Employee 4",
       position: "Customer Success Lead",
       bio: "Dedicated to ensuring client satisfaction and solution optimization.",
-      img: "/assets/team4.jpg"
+      img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
     }
   ];
 
@@ -154,7 +154,7 @@ optimal ROI.
             boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
           }}>
             <img 
-              src="/assets/office.jpg" 
+              src="/assets/collaborative-brainstorming-session-about-us-page-concept_1263357-35648.avif" 
               alt="Our headquarters" 
               style={{
                 width: "100%",
@@ -263,7 +263,7 @@ optimal ROI.
           fontWeight: 300,
           color: "#333"
         }}>
-          Meet Our Team
+          Meet Our Core Team
         </h2>
         <div style={{
           display: "grid",
@@ -339,7 +339,7 @@ optimal ROI.
             boxShadow: "0 10px 20px rgba(0,0,0,0.1)"
           }}>
             <img 
-              src="/assets/ceo.jpg" 
+              src="/assets/ceo.png" 
               alt="CEO"
               style={{
                 width: "100%",

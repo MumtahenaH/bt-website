@@ -10,6 +10,7 @@ import ContactUs from './pages/Contact';
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminPage from './pages/admin';
 import AdminLogin from './pages/adminlogin';
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path="/12345" element={<AdminLogin/>} />
      
     </Routes>
+    <Footer />
   </Router>
   </AuthProvider> 
   );

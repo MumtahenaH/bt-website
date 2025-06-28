@@ -17,7 +17,7 @@ function ContactUs() {
        setResult("Sending....");
        const formData = new FormData(event.target);
    
-       formData.append("access_key", "9c856ef9-695e-47ec-829c-ee10995a25db");
+       formData.append("access_key", "dfab5107-baef-476c-a6f0-3a78a0e45782");
    
        const response = await fetch("https://api.web3forms.com/submit", {
          method: "POST",
@@ -36,7 +36,7 @@ function ContactUs() {
      };
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-[#f9f2ee] px-4 md:px-20 py-10 md:py-20 border-[6px] border-[#931f1d] gap-10 font-['Space_Grotesk']">
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-[#f5f5f5] px-4 md:px-20 py-10 md:py-20  gap-10 font-['Space_Grotesk']">
             
             <div className="flex flex-col items-center text-center max-w-xl w-full px-4">
                 <img
@@ -53,7 +53,7 @@ function ContactUs() {
             {/* Form */}
             <form
                 onSubmit={onSubmit}
-                className="bg-[#f9f2ee] rounded-lg px-6 py-6 md:p-10 flex flex-col gap-4 w-full max-w-lg text-center"
+                className="bg-[#f5f5f5] rounded-lg px-6 py-6 md:p-10 flex flex-col gap-4 w-full max-w-lg text-center"
             >
                 {[
                     { name: "name", label: "Name", type: "text" },
@@ -68,7 +68,7 @@ function ContactUs() {
                            
                             placeholder={`Type ${field.label.toLowerCase()}`}
                             required
-                            className="p-3 md:p-4 bg-[#f9f2ee] border-b border-neutral-300 text-center focus:outline-none text-black placeholder:text-gray-500"
+                            className="p-3 md:p-4 bg-[#f5f5f5] border-b border-neutral-300 text-center focus:outline-none text-black placeholder:text-gray-500"
                         />
                     </div>
                 ))}
@@ -82,7 +82,7 @@ function ContactUs() {
                         placeholder="Your message"
                         rows={4}
                         required
-                        className="p-3 md:p-4 bg-[#f9f2ee] border-b border-neutral-300 text-center focus:outline-none text-black placeholder:text-gray-500 resize-none"
+                        className="p-3 md:p-4 bg-[#f5f5f5] border-b border-neutral-300 text-center focus:outline-none text-black placeholder:text-gray-500 resize-none"
                     />
                 </div>
 

@@ -1,5 +1,27 @@
+import React, { useEffect, useRef, useState } from "react";
 function Client() {
     const ServicesSection = () => {
+ const [buttonVisible, setButtonVisible] = useState(false);
+ const buttonRef = useRef(null);
+   useEffect(() => {
+     const observeElement = (ref, setter, delay = 0) => {
+       const observer = new IntersectionObserver(
+         ([entry]) => {
+           if (entry.isIntersecting) {
+             setTimeout(() => setter(true), delay);
+             observer.unobserve(entry.target);
+           }
+         },
+         { threshold: 0.2 }
+       );
+       if (ref.current) observer.observe(ref.current);
+     };
+ 
+
+
+     observeElement(buttonRef, setButtonVisible, 600);
+ 
+   }, []);
         return (
             <section id="client" style={styles.section}>
                 {/* Image Section */}
@@ -21,27 +43,16 @@ function Client() {
                         Trusted by a diverse portfolio of clients, driving innovation and excellence together.
                     </p>
 
-                    <button
-                        style={styles.button}
-                        onMouseOver={(e) => {
-                            e.currentTarget.style.transform = "scale(1.05)";
-                            e.currentTarget.style.boxShadow = "0px 8px 12px rgba(0, 0, 0, 0.2)";
-                        }}
-                        onMouseOut={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                            e.currentTarget.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
-                        }}
-                        onMouseDown={(e) => {
-                            e.currentTarget.style.transform = "scale(0.95)";
-                            e.currentTarget.style.boxShadow = "0px 2px 4px rgba(0, 0, 0, 0.15)";
-                        }}
-                        onMouseUp={(e) => {
-                            e.currentTarget.style.transform = "scale(1.05)";
-                            e.currentTarget.style.boxShadow = "0px 8px 12px rgba(0, 0, 0, 0.2)";
-                        }}
-                    > <a href="/clients">
-                        Learn More <span style={{ fontSize: "16px", transition: "transform 0.3s ease-in-out" }}>→</span> </a>
-                    </button>
+                    <div
+          ref={buttonRef}
+          className={`${buttonVisible ? "fade-in-up" : "opacity-0"} flex justify-left`}
+        >
+          <button className="rounded-full px-6 py-4 text-gray-200 font-bold text-sm md:text-base uppercase flex items-center gap-2 bg-gradient-to-r from-red-900 to-gray-700 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-sm">
+            <a href="/about">
+              Learn More <span className="text-lg transition-transform">→</span>
+            </a>
+          </button>
+        </div>
                 </div>
 
                 {/* Mobile Styles */}

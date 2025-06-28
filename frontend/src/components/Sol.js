@@ -1,4 +1,27 @@
+import React, { useEffect, useRef, useState } from "react";
+
 function Sol() {
+ const [buttonVisible, setButtonVisible] = useState(false);
+ const buttonRef = useRef(null);
+   useEffect(() => {
+     const observeElement = (ref, setter, delay = 0) => {
+       const observer = new IntersectionObserver(
+         ([entry]) => {
+           if (entry.isIntersecting) {
+             setTimeout(() => setter(true), delay);
+             observer.unobserve(entry.target);
+           }
+         },
+         { threshold: 0.2 }
+       );
+       if (ref.current) observer.observe(ref.current);
+     };
+ 
+
+
+     observeElement(buttonRef, setButtonVisible, 600);
+ 
+   }, []);
     const ServicesSection = () => {
         return (
             <section id="solutions" style={styles.section}>
@@ -31,10 +54,16 @@ function Sol() {
                         ))}
                     </div>
 
-                    <button style={styles.button}>
-                    <a href="/services">  Learn More <span style={{ fontSize: "16px" }}>→</span></a>
-                      
-                    </button>
+                    <div
+          ref={buttonRef}
+          className={`${buttonVisible ? "fade-in-up" : "opacity-0"} flex justify-left`}
+        >
+          <button className="rounded-full px-6 py-4 text-gray-200 font-bold text-sm md:text-base uppercase flex items-center gap-2 bg-gradient-to-r from-red-900 to-gray-700 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-sm">
+            <a href="/about">
+              Learn More <span className="text-lg transition-transform">→</span>
+            </a>
+          </button>
+        </div>
                 </div>
 
                 {/* Force stacking on mobile */}

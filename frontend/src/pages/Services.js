@@ -17,63 +17,63 @@ function Services() {
     dataCenter: [
       {
         title: "Raised Floor System",
-        img: "/assets/service1.jpg",
+        img: "/assets/services/raised floor.jpg",
         desc: "Provides flexible underfloor space for cooling, cabling, and airflow management in data centers.",
         detail: "Essential for flexible and efficient data center infrastructure."
       },
       {
         title: "Rack and Containment System",
-        img: "/assets/service2.jpg",
+        img: "/assets/services/ai-generated-7957988_1280.jpg",
         desc: "Houses IT equipment in organized racks with airflow containment.",
         detail: "Improves cooling efficiency and physical equipment security."
       },
       {
         title: "Data Center Backbone & Passive SCS",
-        img: "/assets/service3.jpg",
+        img: "/assets/services/data center backbone_cabling.png",
         desc: "Builds the structured cabling foundation for data and communication.",
         detail: "Ensures seamless connectivity and high-speed data transmission."
       },
       {
         title: "Cooling System",
-        img: "/assets/service4.jpg",
+        img: "/assets/services/Data Center cooling Solution.jpg",
         desc: "Maintains optimal environmental conditions for servers.",
         detail: "Prevents overheating and ensures consistent system performance."
       },
       {
         title: "Data Center Power Solution",
-        img: "/assets/service5.jpg",
+        img: "/assets/services/Lighting.jpg",
         desc: "Provides reliable power with UPS, switchgear, and grounding.",
         detail: "Sub-services include: Grounding & Bonding System, Trunking Pathway,Distribution Switchgear,Power Cabling, Automatic Voltage Regulator (AVR),Online UPS,ATS / STS, Basic / Smart Inteligent PDU, Lighting, Lightning Protection"
       },
       {
         title: "Fire Door",
-        img: "/assets/service5.jpg",
+        img: "/assets/services/Fire-door-single.jpg",
         desc: "Fire-rated door system for data center compartments.",
         detail: "Enhances fire safety and structural protection in emergencies."
       }, {
         title: "Data Center Door Access Control",
-        img: "/assets/service5.jpg",
+        img: "/assets/services/Door Access control.jpg",
         desc: "Controls and monitors entry to restricted server areas.",
         detail: "Enhances physical security using card, biometric, or digital systems."
       }, {
         title: "Environmental Monitoring System (EMS)",
-        img: "/assets/service5.jpg",
+        img: "/assets/services/Data center Environmental Monitoring system.jpg",
         desc: "Tracks temperature, humidity, and air quality in real time.",
         detail: "Alerts on abnormal changes to prevent equipment damage."
       }, {
         title: "Network Monitoring System (NMS)",
-        img: "/assets/service5.jpg",
+        img: "/assets/services/NAS_solution.webp",
         desc: "Monitors network traffic, uptime, and device status.",
         detail: "Helps quickly identify faults and optimize performance."
       }, {
         title: "Rodent Repellent System",
-        img: "/assets/service5.jpg",
+        img: "/assets/services/rodent-repellent-system-.avif",
         desc: "Protects cabling and hardware from rodent intrusion.",
         detail: "Uses safe deterrents to maintain infrastructure integrity."
       },
       {
         title: "Fire Detection & Suppression System",
-        img: "/assets/service6.jpg",
+        img: "/assets/services/Automatic_Fire_Suppression.webp",
         desc: "Detects early signs of fire and activates extinguishing agents.",
         detail: "Minimizes fire damage and safeguards data center assets."
       }
@@ -81,102 +81,148 @@ function Services() {
     serverStorage: [
       {
         title: "IAM",
-        img: "/assets/server1.jpg",
-        desc: "Enterprise-grade server solutions for all business needs.",
-        detail: "abz"
+        img: "/assets/services/data-network-illustration_24908-57787.jpg",
+        desc: "Secure identity and access management for enterprise infrastructure.",
+        detail: "Identity and Access Management solutions to control and secure user access across IT environments."
       },
       {
         title: "NAS",
-        img: "/assets/storage1.jpg",
-        desc: "Scalable storage solutions to grow with your business.",
-        detail: "abz"
+        img: "/assets/services/data-center_24911-45211.jpg",
+        desc: "Centralized file storage that scales with your business growth.",
+        detail: "Network Attached Storage systems providing centralized, file-based storage with easy access and management."
       },
       {
         title: "SAN",
-        img: "/assets/backup1.jpg",
-        desc: "Reliable backup solutions to protect your critical data.",
-        detail: "abz"
+        img: "/assets/services/SAN.jpg",
+        desc: "High-speed data storage network for mission-critical applications.",
+        detail: "Storage Area Networks enabling high-speed block-level data access for mission-critical applications."
       },
-    
     ],
+    
     networkInfra: [
       {
-        title: "Network Design",
-        img: "/assets/network1.jpg",
-        desc: "Custom network designs tailored to your business requirements.",
-        detail: "abz"
+        title: "Routing, Switching & Security",
+        img: "/assets/services/routing.avif",
+        desc: "High-performance networking and enterprise-grade security solutions.",
+        detail: "Comprehensive networking infrastructure including routing, switching, and cybersecurity for seamless operations."
       },
       {
-        title: "Cabling Solutions",
-        img: "/assets/cabling1.jpg",
-        desc: "Structured cabling solutions for reliable connectivity.",
-        detail: "abz"
+        title: "Structured Cabling System",
+        img: "/assets/services/general_cabling_img01.jpg",
+        desc: "Organized cabling systems for optimized performance and manageability.",
+        detail: "Standardized cabling infrastructure to support data, voice, and video across your IT ecosystem."
       },
       {
-        title: "Wireless Solutions",
-        img: "/assets/wireless1.jpg",
-        desc: "Enterprise wireless solutions for seamless mobility.",
-        detail: "abz"
+        title: "Smart Wi-Fi",
+        img: "/assets/services/connected-devices-smart-home-digital-world-network-internet-connection-technology-wifi-communication.avif",
+        desc: "Scalable wireless connectivity for seamless business operations.",
+        detail: "Intelligent wireless networks ensuring high-speed, secure, and scalable connectivity."
       },
       {
-        title: "Security Solutions",
-        img: "/assets/security1.jpg",
-        desc: "Network security solutions to protect your infrastructure.",
-        detail: "abz"
+        title: "Surveillance Security System",
+        img: "/assets/services/CCTV Camera.jpg",
+        desc: "24/7 monitoring and security through advanced surveillance technologies.",
+        detail: "Integrated video surveillance solutions for 24/7 monitoring, threat detection, and incident management."
+      },
+      {
+        title: "Time Attandence & Access Control",
+        img: "/assets/services/Time attendance system.jpg",
+        desc: "Automated access control and attendance tracking for workforce management.",
+        detail: "Automated attendance and access control systems to enhance workforce management and security."
+      },
+      {
+        title: "Video Conferencing",
+        img: "/assets/services/video-conferencing-software.avif",
+        desc: "Real-time collaboration tools for remote and hybrid teams.",
+        detail: "HD video conferencing solutions enabling real-time collaboration across locations."
+      },
+      {
+        title: "Network Monitoring System (NMS)",
+        img: "/assets/services/Centralized network monitoring.png",
+        desc: "Proactive network oversight to ensure performance and reliability.",
+        detail: "Centralized tools for tracking network health, performance, and fault detection in real-time."
+      },
+      {
+        title: "IP Telephone",
+        img: "/assets/services/VoIP-Diagram-Image.jpeg",
+        desc: "Crystal-clear communication with integrated IP telephony.",
+        detail: "Advanced IP-based telephony systems providing clear communication and integration with digital services."
       }
     ],
+    
     industrialAutomation: [
       {
-        title: "Process Automation",
-        img: "/assets/automation1.jpg",
-        desc: "Streamline your industrial processes with automation.",
-        detail: "abz"
+        title: "Electrification Design & Implementation",
+        img: "/assets/services/planning & implementation.jpg",
+        desc: "Comprehensive design and execution of electrical systems.",
+        detail: "Design and deployment of safe, efficient electrical systems for industrial facilities."
       },
       {
-        title: "Control Systems",
-        img: "/assets/control1.jpg",
-        desc: "Advanced control systems for industrial applications.",
-        detail: "abz"
+        title: "Commercial Power",
+        img: "/assets/services/Commercial Power system.jpg",
+        desc: "Robust power solutions to support commercial infrastructure.",
+        detail: "Reliable and scalable power solutions to meet commercial and industrial energy demands."
       },
       {
-        title: "SCADA Systems",
-        img: "/assets/scada1.jpg",
-        desc: "Monitor and control your industrial processes remotely.",
-        detail: "abz"
+        title: "Building Management System (BMS)",
+        img: "/assets/services/bms.jpg",
+        desc: "Smart control of HVAC, lighting, and building automation.",
+        detail: "Smart systems to control HVAC, lighting, and energy use for efficient building operations."
       },
       {
-        title: "IoT Solutions",
-        img: "/assets/iot1.jpg",
-        desc: "Industrial IoT solutions for smart manufacturing.",
-        detail: "abz"
+        title: "BusBar Trunking System (BBT)",
+        img: "/assets/services/busbar system.jpg",
+        desc: "Efficient and flexible power distribution for large setups.",
+        detail: "Modular and efficient electrical power distribution systems for large infrastructure."
+      },
+      {
+        title: "Fire Detection & Protection System",
+        img: "/assets/services/fire detection.webp",
+        desc: "Reliable detection and suppression systems for fire safety.",
+        detail: "Comprehensive fire safety systems including detection, alarms, and suppression technologies."
+      },
+      {
+        title: "Generator",
+        img: "/assets/services/generator.jpg",
+        desc: "Uninterrupted power supply with industrial-grade generators.",
+        detail: "Backup and standby power generation systems for uninterrupted business continuity."
       }
     ],
+    
     transportation: [
       {
-        title: "Fleet Management",
-        img: "/assets/fleet1.jpg",
-        desc: "Comprehensive solutions for managing transportation fleets.",
-        detail: "abz"
+        title: "Emergency Telephone System",
+        img: "/assets/services/Emargency Call.jpg",
+        desc: "Critical communication infrastructure for emergencies.",
+        detail: "Secure and reliable communication systems for emergency response in transit environments."
       },
       {
-        title: "Tracking Systems",
-        img: "/assets/tracking1.jpg",
-        desc: "Real-time tracking solutions for vehicles and assets.",
-        detail: "abz"
+        title: "Outdoor Cabinets",
+        img: "/assets/services/outdoor cabinet.jpg",
+        desc: "Weatherproof enclosures for field-deployed systems.",
+        detail: "Weather-resistant enclosures for protecting telecom and electrical equipment in outdoor settings."
       },
       {
-        title: "Logistics Solutions",
-        img: "/assets/logistics1.jpg",
-        desc: "Optimize your logistics operations with our solutions.",
-        detail: "abz"
+        title: "Variable Message Sign",
+        img: "/assets/services/Massager Sign Board.jpg",
+        desc: "Dynamic signage systems for real-time public updates.",
+        detail: "Dynamic signage systems for real-time traffic and public information in transport networks."
       },
       {
-        title: "Passenger Systems",
-        img: "/assets/passenger1.jpg",
-        desc: "Advanced systems for passenger information and management.",
-        detail: "abz"
+        title: "Optical Line Monitoring",
+        img: "/assets/services/optical line monitoring.png",
+        desc: "Real-time fiber optic monitoring for fault prevention.",
+        detail: "Real-time fiber optic monitoring solutions to detect faults and ensure network integrity."
+      },
+      {
+        title: "Weatherproof / Explosion-proof Lighting",
+        img: "/assets/services/Explosion Water Proof Light.jpg",
+        desc: "Safe and durable lighting for extreme environments.",
+        detail: "Durable lighting systems designed for extreme environments and hazardous industrial zones."
       }
     ]
+    
+    
   };
 
   const ServiceSection = ({ title, services }) => {
@@ -226,7 +272,8 @@ function Services() {
               flexShrink: 0
             }}
             aria-label="Previous services"
-          >&lt;</button>
+          >  <img src='/assets/back.png'>
+              </img></button>
           )}
           
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? "15px" : "20px", width: "100%", maxWidth: "1000px" }}>
@@ -288,7 +335,8 @@ function Services() {
               }}
               aria-label="Next services"
             >
-              &gt;
+              <img src='/assets/next.png'>
+              </img>
             </button>
           )}
         </div>
@@ -317,7 +365,8 @@ function Services() {
               }}
               aria-label="Previous services"
             >
-              &lt;
+               <img src='/assets/back.png'>
+               </img>
             </button>
             <button 
               onClick={nextSlide}
@@ -336,7 +385,8 @@ function Services() {
               }}
               aria-label="Next services"
             >
-              &gt;
+               <img src='/assets/next.png'>
+               </img>
             </button>
           </div>
         )}

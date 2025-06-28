@@ -298,43 +298,58 @@ function ClientPortfolio() {
           scrollBehavior: 'smooth'
         }}
       >
-        {portfolioItems.map((client, index) => (
-          <div 
-            id={`slide${index+1}`} 
-            key={index}
-            ref={el => slideRefs.current[index] = el}
-            className="carousel-item relative w-full justify-center items-center"
-            style={{
-              flex: '0 0 100%'
-            }}
-          >
-            <img
-              src={client.logo}
-              className={`${isMobile ? "w-24" : "w-32"} max-h-32 object-contain`}
-              alt={`${client.title} Logo`}
-            />
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToPrevSlide();
-                }} 
-                className="btn btn-circle"
-              >
-                ❮
-              </button>
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToNextSlide();
-                }} 
-                className="btn btn-circle"
-              >
-                ❯
-              </button>
-            </div>
-          </div>
-        ))}
+  {slideItems.map((item, index) => (
+  <div 
+    id={`slide${index + 1}`} 
+    key={index}
+    ref={el => slideRefs.current[index] = el}
+    className="carousel-item relative w-full flex justify-center items-center"
+    style={{ flex: '0 0 100%' }}
+  >
+    <div className="card card-side bg-white shadow-sm w-full max-w-2xl hover:shadow-md transition-all duration-300 group">
+      <figure className="w-1/2 overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.title}
+          className={`w-full max-h-76 object-cover}`}
+        />
+      </figure>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title text-black">{item.title}</h2>
+        <p className="text-black text-sm">
+          {item.description}
+        </p>
+      </div>
+    </div>
+    
+
+  {/* card2 */}
+
+
+    {/* Slide navigation buttons */}
+    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <button 
+        onClick={(e) => {
+          e.preventDefault();
+          goToPrevSlide();
+        }} 
+        className="btn btn-circle"
+      >
+        ❮
+      </button>
+      <button 
+        onClick={(e) => {
+          e.preventDefault();
+          goToNextSlide();
+        }} 
+        className="btn btn-circle"
+      >
+        ❯
+      </button>
+    </div>
+  </div>
+))}
+
       </div>
 
       {/* Slide Indicators */}

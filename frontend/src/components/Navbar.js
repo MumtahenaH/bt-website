@@ -1,30 +1,22 @@
 import { useState, useEffect } from "react";
 
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+ 
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
-    // Initial check
+  
     checkMobile();
-    
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", checkMobile);
-    
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", checkMobile);
     };
   }, []);
+  
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -53,11 +45,21 @@ function Navbar() {
         justifyContent: "center",
         alignItems: "center",
         zIndex: 1000,
-        background: scrolled ? "rgba(231, 226, 226, 0.25)" : "rgba(0, 0, 0, 0)",
-        backdropFilter: scrolled ? "blur(10px)" : "none",
+        background: "#f5f5f5",
+        boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",  // or any solid color you prefer
+        borderBottomLeftRadius:"10px",
+        borderBottomRightRadius: "10px",
+        border: "black",
         transition: "all 0.3s ease-in-out",
       }}
     >
+      <a href="/" style={{ display: "flex", alignItems: "left" }}>
+    <img
+      src="/Office logo.png"
+      alt="Logo"
+      style={{ height: "40px", objectFit: "contain" }}
+    />
+  </a>
       {/* Desktop Nav - Centered */}
       {!isMobile && (
         <div style={{
@@ -135,7 +137,7 @@ function Navbar() {
           top: "60px",
           left: 0,
           right: 0,
-          background: "rgba(0, 0, 0, 0.95)",
+          background: "rgba(255, 255, 257)",
           padding: "20px",
           display: "flex",
           flexDirection: "column",
@@ -145,6 +147,7 @@ function Navbar() {
           animation: "slideDown 0.3s ease-out"
         }}>
           <a href="/" style={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>HOME</a>
+          
           <a href="/services" style={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>SOLUTIONS & SERVICES</a>
           <a href="/clients" style={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>CLIENT PORTFOLIO</a>
           <a href="/about" style={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>ABOUT US</a>
