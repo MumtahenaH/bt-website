@@ -15,29 +15,18 @@ function AboutUs() {
 
   const teamMembers = [
     {
-      name: "Employee 1",
-      position: "CTO",
-      bio: "Technology visionary with 15+ years in infrastructure solutions.",
+      name: "Nur Mohammad",
+      position: "Project Manager",
+      bio: "Microsoft certified engineer with 10+ years of experience",
       img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
     },
     {
-      name: "Emloyee 2",
-      position: "Head of Engineering",
-      bio: "Specializes in network architecture and industrial automation.",
+      name: "Md. Sadiqul Islam",
+      position: "Project Manager",
+      bio: "Cisco certified engineer with 10+ years of experience",
       img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
     },
-    {
-      name: "Employee 3",
-      position: "Director of Operations",
-      bio: "Expert in data center management and logistics solutions.",
-      img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
-    },
-    {
-      name: "Employee 4",
-      position: "Customer Success Lead",
-      bio: "Dedicated to ensuring client satisfaction and solution optimization.",
-      img: "/assets/7f837a61-550e-465e-ac01-794233e41fa6.jpg"
-    }
+
   ];
 
   return (
@@ -353,28 +342,23 @@ optimal ROI.
               fontSize: isMobile ? "1.5rem" : "2rem",
               marginBottom: "10px",
               color: "#fff"
-            }}>Full Name</h3>
+            }}>Mohammad Zafer Khan</h3>
             <p style={{
               fontSize: "1.1rem",
               color: "#fff",
               marginBottom: "20px"
-            }}>Founder & CEO</p>
+            }}> <b>CEO</b></p>
             <p style={{
-              fontSize: "1rem",
-              lineHeight: 1.6,
+              fontSize: "1.1rem",
+              color: "#fff",
+              marginBottom: "16px"
+            }}> Quote:</p>
+              <p style={{
+              fontSize: "1.1rem",
               color: "#fff",
               marginBottom: "20px"
-            }}>
-              Description.
-            </p>
-            <p style={{
-              fontSize: "1rem",
-              lineHeight: 1.6,
-              color: "#fff",
-              fontStyle: "italic"
-            }}>
-              "His personal quote."
-            </p>
+            }}>  <i>"At the heart of everything we do is a commitment to quality, optimization, access to information, and the success of those we serve."</i></p>
+
           </div>
         </div>
       </div>

@@ -1,6 +1,22 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Services() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.replace('#', ''));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // small delay to ensure DOM is rendered
+      }
+    }
+  }, [location]);
+
+  
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -442,11 +458,22 @@ function Services() {
         </h1>
       </div>
 
-      <ServiceSection title="DATA CENTER SOLUTION" services={allServices.dataCenter} />
-      <ServiceSection title="SERVER AND STORAGE SOLUTION" services={allServices.serverStorage} />
-      <ServiceSection title="PREMISE NETWORK INFRASTRUCTURE SOLUTION" services={allServices.networkInfra} />
-      <ServiceSection title="INDUSTRIAL / COMMERCIAL AUTOMATION SOLUTION" services={allServices.industrialAutomation} />
-      <ServiceSection title="TRANSPORTATION SECTOR" services={allServices.transportation} />
+      <div id="DATA_CENTER_SOLUTION">
+  <ServiceSection title="DATA CENTER SOLUTION" services={allServices.dataCenter} />
+</div>
+<div id="SERVER_AND_STORAGE_SOLUTION">
+  <ServiceSection title="SERVER AND STORAGE SOLUTION" services={allServices.serverStorage} />
+</div>
+<div id="PREMISE_NETWORK_INFRASTRUCTURE_SOLUTION">
+  <ServiceSection title="PREMISE NETWORK INFRASTRUCTURE SOLUTION" services={allServices.networkInfra} />
+</div>
+<div id="INDUSTRIAL_COMMERCIAL_AUTOMATION_SOLUTION">
+  <ServiceSection title="INDUSTRIAL / COMMERCIAL AUTOMATION SOLUTION" services={allServices.industrialAutomation} />
+</div>
+<div id="TRANSPORTATION_SECTOR">
+  <ServiceSection title="TRANSPORTATION SECTOR" services={allServices.transportation} />
+</div>
+
     </div>
   );
 };
